@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahul - Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">Rahul's Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="home">
+        <div class="content">
+            <h1>Hi, I'm <span class="highlight">Rahul</span></h1>
+            <h2>A Passionate <span id="element"></span></h2>
+            <p>Building modern and responsive web applications with HTML, CSS, JS, and more.</p>
+        </div>
+        <div class="image">
+            <img src="pg.png" alt="Profile Image">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h1>Services</h1>
+        <div class="service-container">
+            <div class="service-box">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <p>Creating modern and interactive web applications.</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Web Design</h3>
+                <p>Designing beautiful and user-friendly UI/UX.</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-database"></i>
+                <h3>Java & SQL</h3>
+                <p>Intermediate in backends and databases.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h1>Projects</h1>
+        <div class="project-container">
+            <div class="project-box">
+                <h3>Portfolio Website</h3>
+                <p>A personal portfolio to showcase my skills and projects.</p>
+            </div>
+            <div class="project-box">
+                <h3>YouTube to MP3 Converter</h3>
+                <p>A Node.js-based converter for YouTube videos.</p>
+                <p><a href="https://yt2mp3-rhan.onrender.com/" target="_blank">Visit Website</a></p>
+            </div>
+            <div class="project-box">
+                <h3>Frontend Clones</h3>
+                <p>Developed frontend clones of websites like Amazon, Netflix, and more.</p>
+            </div>
+            <div class="project-box">
+                <h3> Development</h3>
+                <p>Created various web games like Tic Tac Toe and Flappy Bird.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h1>About Me</h1>
+        <p>I am a Computer Science Engineering student passionate about leveraging technology to build innovative and impactful solutions. My interests lie in Web Development, Artificial Intelligence, and Emerging Technologies, where I explore cutting-edge advancements to enhance user experiences and solve real-world problems. I am constantly learning and experimenting with new frameworks, tools, and methodologies to stay ahead in the ever-evolving tech industry.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h1>Contact Me</h1>
+        <p>Email: <a href="mailto:rahulx0568@gmail.com">rahulx0568@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/rahul-93aba3301">linkedin.com/in/rahul</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/rahulx.568/?hl=en">Instagram.com/Rahul</a></p>
+    </section>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Web Designer', 'Java Programmer'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true
+        });
+    </script>
+
+</body>
+</html>
