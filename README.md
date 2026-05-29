@@ -68,7 +68,7 @@ This installs root dependencies and automatically installs dependencies in `clie
 
 ## Environment Variables
 
-Create a `.env` file in `/tmp/workspace/RAHUL-0568/portfolio/server`:
+Create a `.env` file in `server/`:
 
 ```env
 PORT=5000
@@ -108,20 +108,20 @@ npm run server
 
 ## Available Scripts
 
-### Root (`/tmp/workspace/RAHUL-0568/portfolio`)
+### Root
 
 - `npm run dev` - run frontend and backend together
 - `npm run client` - run frontend dev server
 - `npm run server` - run backend in watch mode
 
-### Frontend (`/tmp/workspace/RAHUL-0568/portfolio/client`)
+### Frontend (`client/`)
 
 - `npm run dev` - start Vite dev server
 - `npm run build` - create production build
 - `npm run lint` - run ESLint
 - `npm run preview` - preview production build
 
-### Backend (`/tmp/workspace/RAHUL-0568/portfolio/server`)
+### Backend (`server/`)
 
 - `npm test` - placeholder script (currently exits with error)
 
