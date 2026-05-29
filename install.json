@@ -1,0 +1,16 @@
+{
+  "run": [
+    {
+      "method": "shell.run",
+      "params": {
+        "message": "npm install"
+      }
+    },
+    {
+      "method": "notify",
+      "params": {
+        "html": "Dependencies successfully installed! You can now start the developer server."
+      }
+    }
+  ]
+}

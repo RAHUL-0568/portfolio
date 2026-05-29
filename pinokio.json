@@ -1,0 +1,17 @@
+{
+  "title": "React Portfolio Launcher",
+  "description": "One-click installer and launcher for the optimized React + Tailwind + Theatre.js portfolio",
+  "icon": "pg.png",
+  "menu": [
+    {
+      "icon": "fa-solid fa-power-off",
+      "text": "Start Dev Server",
+      "href": "start.json"
+    },
+    {
+      "icon": "fa-solid fa-plug",
+      "text": "Install Dependencies",
+      "href": "install.json"
+    }
+  ]
+}

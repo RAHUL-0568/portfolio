@@ -1,0 +1,14 @@
+{
+  "name": "portfolio-platform",
+  "version": "1.0.0",
+  "description": "Full-stack AI developer portfolio platform",
+  "scripts": {
+    "postinstall": "npm install --prefix client && npm install --prefix server",
+    "client": "npm run dev --prefix client",
+    "server": "node --watch server/index.js",
+    "dev": "concurrently \"npm run client\" \"npm run server\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

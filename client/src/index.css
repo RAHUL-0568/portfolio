@@ -1,0 +1,403 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+:root {
+  /* Luxury Tech Editorial Palette */
+  --color-bg-base: #f4f1eb;
+  --color-bg-surface: #e9e4db;
+  --color-text-main: #1f1f1b;
+  --color-text-muted: #726c63;
+  --color-accent-primary: #6f7b52;
+  --color-accent-secondary: #8b83a6;
+  --color-accent-neon: #c9f400;
+  --color-border-subtle: rgba(31, 31, 27, 0.08);
+  --color-bg-glass: rgba(233, 228, 219, 0.4);
+  --shadow-premium: 0 40px 120px rgba(42, 50, 36, 0.08);
+  --shadow-accentGlow: 0 0 60px rgba(111, 123, 82, 0.07);
+
+  /* Editorial Spacing Scale */
+  --space-section: 6rem; /* 96px â€” main section vertical rhythm */
+  --space-section-sm: 4rem; /* 64px â€” tighter sections */
+  --space-hero-gap: 8rem; /* 128px â€” post-hero dramatic pause */
+  --space-page-x: clamp(
+    2rem,
+    7vw,
+    8.75rem
+  ); /* 32px â†’ 140px horizontal margins */
+}
+
+/* â”€â”€ Mobile spacing overrides â”€â”€ */
+@media (max-width: 768px) {
+  :root {
+    --space-section: 3rem; /* 48px â€” tight mobile sections */
+    --space-section-sm: 2rem; /* 32px â€” compact mobile */
+    --space-hero-gap: 3.5rem; /* 56px â€” reduced post-hero gap */
+    --space-page-x: 1.25rem; /* 20px â€” tighter horizontal padding */
+  }
+}
+
+/* Warm Luxury Dark Palette - Muted Olive-Charcoal */
+html:not(.light) {
+  --color-bg-base: #1b1d19;
+  --color-bg-surface: #232620;
+  --color-text-main: #eae6df;
+  --color-text-muted: #9a9e94;
+  --color-accent-primary: #6f7b52;
+  --color-accent-secondary: #8b83a6;
+  --color-accent-neon: #c9f400;
+  --color-border-subtle: rgba(234, 230, 223, 0.05);
+  --color-bg-glass: rgba(35, 38, 32, 0.4);
+  --shadow-premium: 0 40px 120px rgba(0, 0, 0, 0.6);
+  --shadow-accentGlow: 0 0 60px rgba(161, 172, 140, 0.09);
+}
+
+html.light {
+  --color-bg-base: #f4f1eb;
+  --color-bg-surface: #e9e4db;
+  --color-text-main: #1f1f1b;
+  --color-text-muted: #726c63;
+  --color-accent-primary: #6f7b52;
+  --color-accent-secondary: #8b83a6;
+  --color-accent-neon: #c9f400;
+  --color-border-subtle: rgba(31, 31, 27, 0.08);
+  --color-bg-glass: rgba(233, 228, 219, 0.4);
+  --shadow-premium: 0 40px 120px rgba(42, 50, 36, 0.08);
+  --shadow-accentGlow: 0 0 60px rgba(111, 123, 82, 0.07);
+}
+
+@theme {
+  --color-background: var(--color-bg-base);
+  --color-surface: var(--color-bg-surface);
+  --color-text-main: var(--color-text-main);
+  --color-muted: var(--color-text-muted);
+  --color-accent-primary: var(--color-accent-primary);
+  --color-accent-secondary: var(--color-accent-secondary);
+  --color-accent-neon: var(--color-accent-neon);
+
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-display: "Cormorant Garamond", serif;
+
+  --shadow-premium: var(--shadow-premium);
+  --shadow-accentGlow: var(--shadow-accentGlow);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-bg-base);
+  color: var(--color-text-main);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   EDITORIAL LAYOUT SYSTEM
+   ========================================= */
+
+/* Luxury horizontal padding â€” scales gracefully */
+.px-editorial {
+  padding-left: var(--space-page-x);
+  padding-right: var(--space-page-x);
+}
+
+/* Cinematic section vertical rhythm */
+.section-cinematic {
+  padding-top: var(--space-section);
+  padding-bottom: var(--space-section);
+  padding-left: var(--space-page-x);
+  padding-right: var(--space-page-x);
+}
+
+/* Breathing gap after hero */
+.gap-hero {
+  height: var(--space-hero-gap);
+}
+
+/* =========================================
+   TYPOGRAPHY SYSTEM
+   ========================================= */
+
+/* Monumental display heading */
+.heading-monumental {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  font-size: clamp(4rem, 13vw, 12rem);
+}
+
+/* Editorial section heading */
+.heading-editorial {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+  font-size: clamp(2.5rem, 7vw, 6rem);
+}
+
+/* Serif italic accent */
+.heading-serif-accent {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* Cinematic philosophy quote */
+.text-philosophy {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-size: clamp(2rem, 4.5vw, 4.5rem);
+}
+
+/* Editorial overline / metadata */
+.text-overline {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* Body copy â€” controlled column width */
+.text-body-editorial {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(0.75rem, 1.1vw, 0.9rem);
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+  max-width: 52ch;
+}
+
+/* =========================================
+   FILM GRAIN & ATMOSPHERE
+   ========================================= */
+
+.noise-overlay {
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.018;
+  pointer-events: none;
+  z-index: 9999;
+  animation: grainFlicker 8s steps(10) infinite;
+}
+
+@keyframes grainFlicker {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-1%, -2%);
+  }
+  20% {
+    transform: translate(-3%, 1%);
+  }
+  30% {
+    transform: translate(2%, -4%);
+  }
+  40% {
+    transform: translate(-1%, 4%);
+  }
+  50% {
+    transform: translate(-3%, 2%);
+  }
+  60% {
+    transform: translate(3%, 0%);
+  }
+  70% {
+    transform: translate(0%, 3%);
+  }
+  80% {
+    transform: translate(1%, 5%);
+  }
+  90% {
+    transform: translate(-2%, 2%);
+  }
+}
+
+/* Mouse-tracking ambient glow */
+.ambient-glow {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    700px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(111, 123, 82, 0.05),
+    transparent 60%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* =========================================
+   CARDS & SURFACES
+   ========================================= */
+
+.parchment-card {
+  background: var(--color-bg-glass);
+  border: 1px solid var(--color-border-subtle);
+  backdrop-filter: blur(8px);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.parchment-card:hover {
+  border-color: rgba(111, 123, 82, 0.25);
+  box-shadow: var(--shadow-accentGlow);
+}
+
+/* =========================================
+   UTILITY
+   ========================================= */
+
+.font-serif-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+}
+
+.text-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-text-main) 10%,
+    var(--color-accent-primary) 90%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.divider-editorial {
+  height: 1px;
+  background: var(--color-border-subtle);
+  width: 100%;
+}
+
+/* =========================================
+   SCROLLBAR
+   ========================================= */
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-secondary);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-primary);
+}
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes revealLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-reveal {
+  animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* Capability list item hover underline */
+.capability-item::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: var(--color-accent-primary);
+  width: 0;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 1rem;
+}
+
+.capability-item:hover::after {
+  width: 100%;
+}
+
+/* =========================================
+   ADMIN CMS THEME
+   ========================================= */
+
+/* Dark Mode (Default for Admin) */
+.admin-theme {
+  --color-bg-base: #0B0C0F;
+  --color-bg-surface: #111318;
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-bg-glass: #111318; /* Solid, no glass */
+  background: var(--color-bg-base);
+}
+
+/* Light Mode */
+html.light .admin-theme {
+  --color-bg-base: #F8F8F5;
+  --color-bg-surface: #FFFFFF;
+  --color-border-subtle: rgba(0, 0, 0, 0.08);
+  --color-bg-glass: #FFFFFF; /* Solid, no glass */
+}
+
+/* Disable expensive effects in Admin */
+.admin-theme .parchment-card,
+.admin-theme [class*='backdrop-blur'] {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.admin-theme {
+  --shadow-premium: none !important;
+  --shadow-accentGlow: none !important;
+}
+
+/* Admin Background Effects */
+.admin-theme .admin-bg-effect {
+  background: radial-gradient(circle at center, rgba(255,255,255,0.04) 0%, transparent 100%);
+}
+html.light .admin-theme .admin-bg-effect {
+  background: radial-gradient(circle at center, rgba(0,0,0,0.03) 0%, transparent 100%);
+}
