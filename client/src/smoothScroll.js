@@ -52,11 +52,12 @@ export function initSmoothScroll() {
   gsap.ticker.add((time) => {
     lenisInstance?.raf(time * 1000);
   });
+  gsap.ticker.lagSmoothing(0);
 
   return () => {
     lenisInstance?.destroy();
     lenisInstance = null;
-    gsap.ticker.remove(() => {});
+    gsap.ticker.remove((time) => lenisInstance?.raf(time * 1000));
     ScrollTrigger.getAll().forEach(t => t.kill());
   };
 }
