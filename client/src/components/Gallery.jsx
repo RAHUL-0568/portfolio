@@ -46,8 +46,8 @@ function Gallery() {
   const yImg3 = useTransform(scrollYProgress, [0, 1], ["-5%", "18%"]);
   const yImg4 = useTransform(scrollYProgress, [0, 1], ["20%", "-12%"]);
 
-  // On mobile: static zero motion values to skip JS transform overhead
-  const staticY = "0%";
+  // On mobile: static zero motion values to skip JS transform overhead safely
+  const staticY = useTransform(scrollYProgress, [0, 1], ["0%", "0%"]);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
