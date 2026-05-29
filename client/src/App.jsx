@@ -117,11 +117,18 @@ function App() {
           </main>
           {/* Editorial footer */}
           <footer
-            className="relative z-10 border-t border-black/[0.04] dark:border-white/[0.04] py-12 flex flex-col sm:flex-row items-center justify-between gap-4"
+            className="relative z-10 border-t border-black/[0.04] dark:border-white/[0.04] py-12 flex flex-col sm:flex-row items-center justify-between gap-6"
             style={{ paddingLeft: 'var(--space-page-x)', paddingRight: 'var(--space-page-x)' }}
           >
-            <p className="text-overline text-muted/35">© {new Date().getFullYear()} {metadata?.name || 'Rahul'} · All rights reserved</p>
-            <p className="text-overline text-muted/25">Crafted with precision & restraint</p>
+            <p className="text-overline text-muted/50">© {new Date().getFullYear()} {metadata?.name || 'Rahul'} · All rights reserved</p>
+            
+            <div className="flex items-center gap-6">
+              <a href="https://linkedin.com/in/rahul-0568" target="_blank" rel="noopener noreferrer" className="text-overline text-muted/50 hover:text-black dark:hover:text-white transition-colors duration-300">LinkedIn</a>
+              <a href="https://github.com/RAHUL-0568" target="_blank" rel="noopener noreferrer" className="text-overline text-muted/50 hover:text-black dark:hover:text-white transition-colors duration-300">GitHub</a>
+              <a href="https://t.me/RAHUL_0568" target="_blank" rel="noopener noreferrer" className="text-overline text-muted/50 hover:text-black dark:hover:text-white transition-colors duration-300">Telegram</a>
+            </div>
+
+            <p className="text-overline text-muted/50">Made with <span className="text-red-500/80">♥</span> by Rahul</p>
           </footer>
         </div>
       } />

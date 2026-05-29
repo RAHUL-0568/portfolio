@@ -23,17 +23,6 @@ export function initSmoothScroll() {
     lenisInstance = null;
   }
 
-  // On touch/mobile devices, skip Lenis entirely — native scroll is faster
-  const isTouchDevice = window.matchMedia("(max-width: 768px)").matches ||
-    ('ontouchstart' in window && navigator.maxTouchPoints > 0);
-
-  if (isTouchDevice) {
-    // Still wire ScrollTrigger so GSAP animations fire correctly
-    ScrollTrigger.refresh();
-    return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
-    };
-  }
 
   lenisInstance = new Lenis({
     lerp: 0.15,              // Fast, snappy interpolation (closer to native feeling)
