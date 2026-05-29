@@ -53,13 +53,10 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'healthy', timestamp: new Date() });
 });
 
-// Serve frontend in production environment
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/dist')));
-  app.use((req, res) => {
-    res.sendFile(path.resolve(__dirname, '../client', 'dist', 'index.html'));
-  });
-}
+// Root fallback for Render pinging
+app.get('/', (req, res) => {
+  res.json({ message: 'Studio OS Backend API is live.', timestamp: new Date() });
+});
 
 app.listen(PORT, () => {
   console.log(`[SERVER] Express server running on port: ${PORT}`);
