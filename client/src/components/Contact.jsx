@@ -22,7 +22,7 @@ function Contact({ metadata }) {
     setSubmitting(true);
     setStatus({ type: '', msg: '' });
     try {
-      const res  = await fetch(`http://${window.location.hostname}:5000/api/contact`, {
+      const res  = await fetch(`${import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

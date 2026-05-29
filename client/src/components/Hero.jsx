@@ -10,7 +10,7 @@ function Hero({ metadata }) {
 
   const resumeUrl =
     metadata?.contact?.email
-      ? `http://${window.location.hostname}:5000/public/RAHUL_Resume.pdf`
+      ? `${import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`}/public/RAHUL_Resume.pdf`
       : "/RAHUL_Resume.pdf";
 
   // Scroll-linked parallax for atmospheric depth

@@ -58,7 +58,7 @@ function Projects() {
 
   useEffect(() => {
     setIsClient(true);
-    fetch(`http://${window.location.hostname}:5000/api/projects`)
+    fetch(`${import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`}/api/projects`)
       .then(res => {
         if (!res.ok) throw new Error();
         return res.json();

@@ -157,7 +157,7 @@ export default function AdminDashboard({ metadata, setMetadata }) {
   }, []);
 
   useEffect(() => {
-    fetch(`http://${window.location.hostname}:5000/api/auth/verify`, {
+    fetch(`${import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`}/api/auth/verify`, {
       credentials: "include",
     })
       .then((res) => {
@@ -180,7 +180,7 @@ export default function AdminDashboard({ metadata, setMetadata }) {
     if (res.status === 401 || res.status === 403) {
       try {
         const refreshRes = await fetch(
-          `http://${window.location.hostname}:5000/api/auth/refresh`,
+          `${import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`}/api/auth/refresh`,
           {
             method: "POST",
             credentials: "include",
@@ -200,7 +200,7 @@ export default function AdminDashboard({ metadata, setMetadata }) {
 
   useEffect(() => {
     if (!isAuthenticated) return;
-    authFetch(`http://${window.location.hostname}:5000/api/contact/inquiries`)
+    authFetch(`${import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`}/api/contact/inquiries`)
       .then((r) => r.json())
       .then((d) => setInquiries(Array.isArray(d) ? d : []))
       .catch(() =>
@@ -223,7 +223,7 @@ export default function AdminDashboard({ metadata, setMetadata }) {
           },
         ]),
       );
-    authFetch(`http://${window.location.hostname}:5000/api/projects`)
+    authFetch(`${import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`}/api/projects`)
       .then((r) => r.json())
       .then((d) => setProjects(Array.isArray(d) ? d : []))
       .catch(() => {});
@@ -239,7 +239,7 @@ export default function AdminDashboard({ metadata, setMetadata }) {
       const trimmedPassword = loginData.password.trim();
 
       const res = await fetch(
-        `http://${window.location.hostname}:5000/api/auth/login`,
+        `${import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`}/api/auth/login`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -263,7 +263,7 @@ export default function AdminDashboard({ metadata, setMetadata }) {
 
   const handleLogout = async () => {
     try {
-      await fetch(`http://${window.location.hostname}:5000/api/auth/logout`, {
+      await fetch(`${import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`}/api/auth/logout`, {
         method: "POST",
         credentials: "include",
       });
@@ -276,7 +276,7 @@ export default function AdminDashboard({ metadata, setMetadata }) {
     setSaveLoading(true);
     try {
       const res = await authFetch(
-        `http://${window.location.hostname}:5000/api/resume/metadata`,
+        `${import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`}/api/resume/metadata`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -310,7 +310,7 @@ export default function AdminDashboard({ metadata, setMetadata }) {
     }
     setPasswordLoading(true);
     try {
-      const res = await fetch(`http://${window.location.hostname}:5000/api/auth/update-password`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`}/api/auth/update-password`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username: "admin", newPassword: newPassword }),
@@ -344,7 +344,7 @@ export default function AdminDashboard({ metadata, setMetadata }) {
   const handleMarkRead = async (id) => {
     try {
       await authFetch(
-        `http://${window.location.hostname}:5000/api/contact/inquiries/${id}`,
+        `${import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`}/api/contact/inquiries/${id}`,
         { method: "PUT" },
       );
     } catch {}
@@ -356,7 +356,7 @@ export default function AdminDashboard({ metadata, setMetadata }) {
   const handleDeleteInquiry = async (id) => {
     try {
       await authFetch(
-        `http://${window.location.hostname}:5000/api/contact/inquiries/${id}`,
+        `${import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`}/api/contact/inquiries/${id}`,
         { method: "DELETE" },
       );
     } catch {}
@@ -376,7 +376,7 @@ export default function AdminDashboard({ metadata, setMetadata }) {
     };
     try {
       const res = await authFetch(
-        `http://${window.location.hostname}:5000/api/projects`,
+        `${import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`}/api/projects`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -405,7 +405,7 @@ export default function AdminDashboard({ metadata, setMetadata }) {
   const handleDeleteProject = async (id) => {
     try {
       await authFetch(
-        `http://${window.location.hostname}:5000/api/projects/${id}`,
+        `${import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`}/api/projects/${id}`,
         { method: "DELETE" },
       );
     } catch {}
