@@ -66,7 +66,7 @@ function App() {
     window.addEventListener('mousemove', handleMouseMove);
 
     // Metadata fetch (cache-busted)
-    fetch(`http://${window.location.hostname}:5000/api/resume/metadata?t=${Date.now()}`)
+    fetch(`${import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`}/api/resume/metadata?t=${Date.now()}`)
       .then(res => { if (!res.ok) throw new Error(); return res.json(); })
       .then(data => { setMetadata(data); setLoading(false); })
       .catch(() => { setMetadata(fallbackMetadata); setLoading(false); });
