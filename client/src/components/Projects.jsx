@@ -53,7 +53,7 @@ function Projects() {
       category: "Digital Hospitality Systems",
       description:
         "A full-stack hotel booking app and administration platform featuring secure reservation flows, dynamic room management, and modern customer interaction architecture.",
-      techStack: ["React.js", "Node.js", "MongoDB", "Stripe", "Express.js"],
+      techStack: ["React.js", "Node.js", "MongoDB",  "Express.js"],
       status: "BOOKING EXPERIENCE SYSTEM",
       liveLink: "https://github.com/RAHUL-0568/Hotel-Booking-app",
     },
