@@ -37,6 +37,7 @@ function Projects() {
         "Framer Motion",
       ],
       status: "LIVE EXPERIENCE / 2026",
+      liveLink: "https://github.com/RAHUL-0568/liveCanvas-",
     },
     {
       title: "JobHunt",
@@ -45,6 +46,7 @@ function Projects() {
         "Production-grade recruitment and job management ecosystem focused on authentication flows, structured application pipelines, and scalable backend integration systems.",
       techStack: ["React.js", "Express.js", "MongoDB", "JWT", "REST APIs"],
       status: "FULL-STACK PLATFORM",
+      liveLink: "https://github.com/RAHUL-0568/job-Hunt",
     },
     {
       title: "SmartStay",
@@ -53,6 +55,7 @@ function Projects() {
         "A full-stack hotel booking app and administration platform featuring secure reservation flows, dynamic room management, and modern customer interaction architecture.",
       techStack: ["React.js", "Node.js", "MongoDB", "Stripe", "Express.js"],
       status: "BOOKING EXPERIENCE SYSTEM",
+      liveLink: "https://github.com/RAHUL-0568/Hotel-Booking-app",
     },
   ];
 
@@ -380,9 +383,15 @@ function Projects() {
 
                     {/* Right Arrow Column */}
                     <div className="flex flex-col items-end justify-center shrink-0">
-                      <span className="hidden lg:flex w-12 h-12 rounded-full border border-black/10 dark:border-white/10 items-center justify-center text-muted group-hover:text-text-main group-hover:border-accent-primary group-hover:bg-accent-primary/5 transition-all duration-700 group-hover:scale-110">
-                        <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                      </span>
+                      {proj.liveLink ? (
+                        <a href={proj.liveLink} target="_blank" rel="noopener noreferrer" className="hidden lg:flex w-12 h-12 rounded-full border border-black/10 dark:border-white/10 items-center justify-center text-muted group-hover:text-text-main group-hover:border-accent-primary group-hover:bg-accent-primary/5 transition-all duration-700 group-hover:scale-110">
+                          <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                        </a>
+                      ) : (
+                        <span className="hidden lg:flex w-12 h-12 rounded-full border border-black/10 dark:border-white/10 items-center justify-center text-muted group-hover:text-text-main group-hover:border-accent-primary group-hover:bg-accent-primary/5 transition-all duration-700 group-hover:scale-110">
+                          <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
